@@ -3,7 +3,7 @@
 function feedback404()
 {
     
-    include 'asli.html';
+    include 'asli.php';
     exit();
 }
 
